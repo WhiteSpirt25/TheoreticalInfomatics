@@ -79,9 +79,6 @@ Y = []
 for row in data:
     Y.append(row[0])
     X.append(row[1:])
-from sklearn.model_selection import train_test_split
-X_train, X_test, y_train, y_test = train_test_split(
-     X, Y, test_size=0.33, random_state=0)
 
 clsssifierParams = NBTrainNew(data,y)
 
