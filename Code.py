@@ -82,12 +82,6 @@ for row in data:
 
 clsssifierParams = NBTrainNew(data,y)
 
-# ans = []
-# for inp in X_test:
-#     ans.append(classificator(inp,clsssifierParams[0],clsssifierParams[1],y))
-# from sklearn.metrics import accuracy_score
-# print(accuracy_score(y_test,ans))#0.5234848484848484
-
 # #count
 # for clas in y:
 #     wordCounter = Counter()
@@ -102,10 +96,6 @@ clsssifierParams = NBTrainNew(data,y)
 #         wordFile.write(wordList[i][0] +' '+ str(wordList[i][1]) + '\n')
 #     wordFile.write(wordList[len(wordList)-1][0] +' '+ str(wordList[len(wordList)-1][1]))
 
-# mistakes = []
-# for i in range(len(ans)):
-#     if ans[i] != y_test[i]:
-#         mistakes.append({y_test[i], ans[i]})
 
 print('Writing to output')
 file = open("news_test.txt",encoding="utf8")
