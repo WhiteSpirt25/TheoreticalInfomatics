@@ -25,6 +25,7 @@ def NBTrain(X,Y):
             wordProb.update( [(line[0], float(line[1])/totalWords)] )
         wordProbs.update({clas:wordProb})
     return clasFreq,wordProbs
+
 def NBTrainNew(X,Y):
     #clsses
     classes = Counter()
@@ -48,6 +49,7 @@ def NBTrainNew(X,Y):
             wordProb.update( [(line[0], float(line[1]))] )
         wordProbs.update({clas:wordProb})
     return clasFreq,wordProbs
+
 def classificator(text,clasFreq,wordProb,classes):
     #splitting
     temp = [text[0].split(),text[1].split()]
@@ -80,8 +82,7 @@ for row in data:
     Y.append(row[0])
     X.append(row[1:])
 
-clsssifierParams = NBTrainNew(data,y)
-
+    
 # #count
 # for clas in y:
 #     wordCounter = Counter()
@@ -96,6 +97,7 @@ clsssifierParams = NBTrainNew(data,y)
 #         wordFile.write(wordList[i][0] +' '+ str(wordList[i][1]) + '\n')
 #     wordFile.write(wordList[len(wordList)-1][0] +' '+ str(wordList[len(wordList)-1][1]))
 
+clsssifierParams = NBTrainNew(data,y)
 
 print('Writing to output')
 file = open("news_test.txt",encoding="utf8")
